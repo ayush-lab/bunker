@@ -108,3 +108,20 @@ background-color: s;
 	color: whitesmoke;
 	transform: rotateY(180deg);
   }
+img{
+  border-radius: 50%;
+  float: left;
+  padding-right: 20px;
+}
+
+#button{
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-bottom: 50px;
+}
+.tt{
+  text-align: center;
+}
+col-md-12{
+  margin: auto;
+}
