@@ -1,2 +1,2 @@
 # bunker
-to make a website helping groups of friends meet each other daily easily 
+to make an interactive website to help buddies from different classes to meet each other.  
