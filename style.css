@@ -1,35 +1,227 @@
-.navbar-brand
+html
+{
+ font-size: 15px;
+scroll-behavior: smooth;
+}
+.navbar-nav{
+	margin-left: auto;
+}
+
+.nav-link{
+	display: inline;
+	padding: 0 18px;
+}
+
+
+.logo
+{
+	background-color: black;
+	
+	background-image: url(image/logo\ \(2\).jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 600px;
+	
+	
+}
+
+.top h1{
+	color:black;
+	margin: 0px auto;
+	font-family: 'Lilita One';
+	font-size: 90px;
+	opacity: 0.8;
+}
+
+
+.nav-link
+{
+	margin-right: 20px;
+}
+ .btn a:hover
+ {
+	 text-decoration: none;
+ }
+
+
+.mem-name
 {   
-    background-image:none;
-    
-    font-size: 30px ;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-
+	
+	position: absolute;
+	left: 60px;
+	bottom: 30px;
+	font-family:'Montserrat',sans-serif!important;;
+	font-weight: 900;
+	
+	font-size: 1.1rem;
 }
 
 
-.navbar #mymenu .customnav .nav-item a
+.m
 {
-    float: right;
-    color: white;
-
+	height: 1000px;
+	position: relative;
+	top: 100px;
+	left: 30px;
 }
-.navbar #mymenu .customnav .nav-item a:hover
+
+
+ 
+  /* for rounder cards to look op*/
+.maa 
 {
-    color: gray;
 
+	border-radius: 30px ;
+	
 }
-.photo
+.map1{
+	
+	border-radius: 500px;
+		float: left;
+	padding-right: 20px;
+  }
+  
+ 
+  .tt{
+	text-align: center;
+  }
+
+  .cv1{
+	height: 120px;
+	padding-top: 45px;
+}
+
+.cv1 a{
+	text-decoration: none;
+	background-color:none;
+	color:black;
+    border:black 2.6px solid;
+	border-radius: 20%;
+	padding: 3px;
+}
+
+.cv1 a:hover{
+	border: whitesmoke 2.6px solid;
+/*	background-color:darkslategrey;*/
+	color:whitesmoke;
+	text-decoration: none;
+	opacity: 0.7;
+}
+
+.services{
+	background-color:darkorange;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.vb h3{
+	font-size:50px;
+	margin:40px;
+	
+	text-decoration: underline bold;
+	margin-left: auto;
+	margin-right: auto;
+	font-family:sans-serif;
+	margin-bottom: 8px;
+}
+
+.caro{
+	margin:0% 8%;
+}
+
+.car{
+	border-radius: 10px;
+	margin-bottom: 20px;
+	height: 400px;
+	width: 450px;
+}
+.box
+{     height: 100px;
+	width: 100px;
+	 box-shadow:  5px 5px 5px 5px gray;
+	
+}
+
+
+.aaaa
 {
-    
-
-    background-image: url(../images/Banner.jpeg);
-
-    background-position: center center;
-
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 80vh;
+	background-image: url(image/scg-canvas-background-animation-11.jpg);
+	background-repeat: repeat;
+	background-position: center;
+	background-size: cover;
+		
 }
+.zz
+{
+	background-image: url(image/scg-canvas-background-animation-6.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 500px;
+}
+
+
+
+
+.dd
+{
+	background-image: url(image/boy.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.side
+{
+	background-image: url(image/banner.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 200px;
+
+}
+.dp
+{
+	background-image: url(image/banner.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 125px;
+	width: 125px;
+	border: 4px solid white;
+	border-radius: 50%;
+	position: relative;
+	top: 140px;
+}
+.side1
+{
+	height: 200px;
+	width: 200px;
+	background-color: gray;
+}
+.blog:hover
+{
+	box-shadow: 2px 2px black;
+}
+.sign:hover
+{
+	background-color: black;
+	transition: 0.3s;
+}
+
+.vv
+{
+	 height: 60px ;
+	 width: 100px;
+	 border-radius: 8px;
+	 background-color: black;
+}
+
+.vv:hover
+{
+  width: 150px;
+	transition: 0.5s;
+}
+
