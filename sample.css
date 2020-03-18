@@ -1,0 +1,58 @@
+.hh{
+	margin: auto;
+    opacity:1;
+}
+
+.aa{
+	margin-top: 70px;
+	text-align: center;
+	align-content: center;
+	border: white 2px solid;
+	color: white;
+}
+
+.tit{
+	text-align: center;
+	margin-top: 70px;
+}
+
+body{
+	background-image: url(image/ladai.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+
+h1{
+	font-family: 'Pacifico', cursive;
+	color: beige;
+	opacity: 0.8;
+	font-size: 55px;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+a:hover{
+	color: white;
+	text-decoration: none;
+}
+.subbtn
+{
+	color: white;
+	float: right;
+	border:  1px solid white;
+	padding: 6px 8px ;
+	text-decoration: none;
+	
+}
+.subbtn:hover
+{
+
+	text-decoration: none;
+	background-color: greenyellow;
+	transition: 0.4s ease-in-out;
+
+}
