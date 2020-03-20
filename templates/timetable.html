@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{%block content%}
+
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+<h2>Bunk ker? </h2>
+
+
+<table style="width:100%">
+ 
+
+  <tr>
+    <td>monday</td>
+    <td><a href="/monday/1">{{user[0].subject}}</a></td>
+    <td><a href="/monday/2">{{user[1].subject}}</a></td>
+    <td><a href="/monday/3">{{user[2].subject}}</a></td>
+    <td><a href="/monday/4">p4</a></td>
+    <td><a href="/monday/5">p5</a></td>
+    <td><a href="/monday/6">p6</a></td>
+    <td><a href="/monday/7">p7</a></td>
+
+  </tr>
+  <tr>
+  <td>tuesday</td>
+    <td><a href="/tuesday/1"></a></td>
+    <td><a href="/tuesday/2">p2</a></td>
+    <td><a href="/tuesday/3">p3</a></td>
+    <td><a href="/tuesday/4">p4</a></td>
+    <td><a href="/tuesday/5">p5</a></td>
+    <td><a href="/tuesday/6">p6</a></td>
+    <td><a href="/tuesday/7">p7</a></td>
+  </tr>
+
+  <tr>
+  <td>wednesday</td>
+    <td><a href="/wednesday/1">p1</a></td>
+    <td><a href="/wednesday/2">p2</a></td>
+    <td><a href="/wednesday/3">p3</a></td>
+    <td><a href="/wednesday/4">p4</a></td>
+    <td><a href="/wednesday/5">p5</a></td>
+    <td><a href="/wednesday/6">p6</a></td>
+    <td><a href="/wednesday/7">p7</a></td>
+  </tr>
+  <tr>
+  <td>Thursday</td>
+    <td><a href="/thusday/1">p1</a></td>
+    <td><a href="/thusday/2">p2</a></td>
+    <td><a href="/thusday/3">p3</a></td>
+    <td><a href="/thusday/4">p4</a></td>
+    <td><a href="/thusday/5">p5</a></td>
+    <td><a href="/thusday/6">p6</a></td>
+    <td><a href="/thusday/7">p7</a></td>
+  </tr>
+  <tr>
+  <td>friday</td>
+    <td><a href="/friday/1">p1</a></td>
+    <td><a href="/friday/2">p2</a></td>
+    <td><a href="/friday/3">p3</a></td>
+    <td><a href="/friday/4">p4</a></td>
+    <td><a href="/friday/5">p5</a></td>
+    <td><a href="/friday/6">p6</a></td>
+    <td><a href="/friday/7">p7</a></td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+<html>
+    <head>
+
+      {% if title %}
+      <title>{{ title }} </title>
+      {% else %}
+      <title>Welcome to bunker</title>
+      {% endif %}
+
+
+    </head>
+
+    <body style="background-color:brown;">
+<style>
+  a:link, a:visited {
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: darkorange;
+</style>
+        <div> <p style= "color:Orange;" >Bunker <a href="/timetable">BUNKER?</a>
+
+                        <a href="/signup">register now</a>
+                        <a href="/dashboard">information page</a>
+            {% if current_user.is_authenticated %}
+                        <a href="/logout">Logout</a>
+            {% else %}
+                        <a href="/login">Login</a>
+            {% endif %}
+
+
+        </div>
+
+
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+           {% for message in messages %}
+            <p1 style="color:orange"><l1>{{message}}</l1></p1>
+        {% endfor %}
+        {%endif%}
+        {%endwith%}
+        {% block content %}{% endblock %}
+    </body>
+</html>
