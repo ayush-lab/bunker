@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table>
+        <tr valign="top">
+
+            <td>
+
+            	<img src="{{img_scr}}"   style="height:200px;"alt=""></td>
+            <td><h1 style="background-color:lightblue;">    User:   {{ user.username }}</h1></td>
+
+        </tr>
+
+        <hr>
+
+    </table>
+    <form action ="/profile/{{user.username}}" method="post" enctype=multipart/form-data >
+    <input type="file" name="file">
+   <input type=submit value="upload">
+    </form>
+    <hr><hr>
+{% endblock %}
