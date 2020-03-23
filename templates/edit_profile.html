@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table>
+        <tr valign="top">
+
+            <td>
+
+            	<img src="{{img_scr}}"   style="height:200px;"alt=""></td>
+
+            <form action="/edit_profile/{{current_user.username}}" method="post">
+                 
+                 <label for="username">USERNAME:</label>
+                <input type="text" name="username" value = " {{current_user.username}}" >
+                <br> <br>
+
+                <label for="college">College:</label>
+                <input type="text" name ="college" value  = " {{current_user.college}} "> <br> <br>
+
+
+                <label for="Status">Status:</label>
+                <input type="text" name ="status" value = " {{current_user.about_me}} " >
+                
+                <br><br>
+                
+
+               
+
+                <p1><button class="button"><b>SUMBIT</b></p1></button>
+             </form>
+
+
+           
+
+
+
+        </tr>
+
+        <hr>
+
+    </table>
+    <br>
+    <form action ="/profile/{{current_user.username}}" method="post" enctype=multipart/form-data >
+    <input type="file" name="file"><br>
+   <input type=submit value="Update">
+    </form>
+    <hr><hr>
+{% endblock %}
