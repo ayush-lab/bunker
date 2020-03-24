@@ -1,22 +1,95 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <table>
-        <tr valign="top">
 
-            <td>
+<body>
+ 
+    <div class="container-fluid" style=" background: linear-gradient( azure 10%,lightblue 80%);">
+        <div class="container mt-4" style="width: 900px; height: 1200px; background-color: azure; box-shadow: 5px 5px gray; opacity: 0.9;">
+  
+        <div class="container-fluid side">
+  
+            
+            <a href="edit_profile.html"   > <i style="font-size: large; float: right; margin-top: 160px;" class="fas fa-edit"></i>  </a>            
+          <h3 style="float: right; margin-top: 150px; margin-right: 60px;" class="text-white"><em>ABHAY CHAUHAN</em></h3>
+          <div class="dp">
+  
 
-            	<img src="{{img_scr}}"   style="height:200px;"alt=""></td>
-            <td><h1 style="background-color:lightblue;">    User:   {{ user.username }}</h1></td>
 
-        </tr>
+             <button class="btn btn-info" style="margin-left: 82px;  border-radius: 50%;" ondblclick="abhay()">Edit</button>
 
-        <hr>
+            <div style="margin-left: 300px; margin-top: 36px; display: none;" id="edit">
+                <form action ="/profile/{{user.username}}" method="post" enctype=multipart/form-data >
+                  
+                    <input  type="file" name="file">
+                    
+                   
 
-    </table>
-    <form action ="/profile/{{user.username}}" method="post" enctype=multipart/form-data >
-    <input type="file" name="file">
-   <input type=submit value="upload">
-    </form>
-    <hr><hr>
+                   <input style=" margin-left: 250px;" type=submit value="upload">
+                    </form>
+                   <hr>
+              
+
+                  </div>
+            </div>
+
+            </div>
+
+
+          
+          <div class="row" style="margin-top: 160px;">
+              <div class="col-lg-4">
+                  
+                  <div class=" side1 blog text-center" style="margin-top: 0px; border-radius: 10px;">
+                    <br>
+                    <h5 class=" text-white">PERSONAL INFO.</h5>
+  
+  
+                  </div>        
+  
+              </div>
+              <div class="col-lg-7">
+                  <div class="container blog  text-center" style="height: 80px; width: 400px;  background-color: gray; border-radius: 10px;">
+  
+                                          <h5 class="text-white">STATUS</h5>
+  
+  
+  
+                  </div>
+                  <br>
+                  <div class="container blog text-center" style="height: 180px; width: 400px; background-color: gray; border-radius: 10px;">
+  
+                    <div>
+                        <h4 class="text-white">ABOUT</h4>
+
+                    </div>
+                  </div>
+                  
+                  
+  
+  
+  
+  
+  
+              </div>
+  
+          </div>
+        </div>
+  
+  
+  
+        </div>
+  
+    </div>
+    
+    <script>
+ function abhay()
+ {
+     document.getElementById("edit").style.display="inline-block";
+ }
+
+    </script>
+</body>
+
+
 {% endblock %}
