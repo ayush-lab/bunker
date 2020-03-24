@@ -1,48 +1,85 @@
 {% extends "base.html" %}
+<body class="bg-info" >
+       <div class="  container-fluid text-center text-white mt-4">
+           <i ><h1 style="text-shadow: 2px 1px aquamarine;">EDIT PROFILE</h1></i>
 
-{% block content %}
-    <table>
-        <tr valign="top">
+<br>
+           <div class="row">
+               <div class="col-lg-1">
 
-            <td>
+               </div>
 
-            	<img src="{{img_scr}}"   style="height:200px;"alt=""></td>
+               <div class="col-lg-5 col-sm-3 mt-4">
+                   <div class="container bg-white" style="height: 450px; width: 300px; border-radius: 25px; box-shadow: 10px 10px aquamarine;">
+                    <br>
+                    <H5 class="text-info"  style="text-shadow: 2px 1px aquamarine;" >UPDATE PERSONAL INFORMATION</H5>
 
-            <form action="/edit_profile/{{current_user.username}}" method="post">
-                 
-                 <label for="username">USERNAME:</label>
+ <br>
+ <br>
+                    <div>
+                        <br>
+                        <label for="username" class="text-info">USERNAME:</label>
                 <input type="text" name="username" value = " {{current_user.username}}" >
-                <br> <br>
-
-                <label for="college">College:</label>
-                <input type="text" name ="college" value  = " {{current_user.college}} "> <br> <br>
-
-
-                <label for="Status">Status:</label>
-                <input type="text" name ="status" value = " {{current_user.about_me}} " >
+                <br> <br> <br>
+                <label class="text-info" for="college">COLLEGE:</label>
+                <input  type="text" name ="college" value  = " {{current_user.college}} "> <br> <br> <br>
+                <label class="text-info" for="Status">STATUS:</label>
+                <input type="text" class="" name ="status" value = " {{current_user.about_me}} " >
                 
                 <br><br>
+
+
+                <p1><button class="button2" style="background-color: aquamarine;"><b>SUMBIT</b></p1></button>
+                    </div>
+
+                   
+                   </div>
+
+
+               </div>
+
+               <div class="col-lg-5 col-sm-3 mt-4">
+                <div class="container bg-white" style="height: 450px; width: 300px; border-radius: 25px; box-shadow: 10px 10px aquamarine;">
+                 <br>
+                 <H5 class="text-info"  style="text-shadow: 2px 1px aquamarine;" >UPDATE DISPLAY PICTURE</H5>
+
+
+
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <form action ="/profile/{{current_user.username}}" method="post" enctype=multipart/form-data >
+                    <input type="file" class="ml-1"  style="background-color: aquamarine;" name="file"><br>
+                    <BR>
+                    </BR>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+                   <input type=submit  style="background-color: aquamarine; font-weight: 700;" value="UPDATE">
+                    </form>
+
                 
 
-               
-
-                <p1><button class="button"><b>SUMBIT</b></p1></button>
-             </form>
+                </div>
 
 
-           
+            </div>
+
+
+           </div>
+
+
+       </div>
+    
 
 
 
-        </tr>
+    
+</body>
 
-        <hr>
 
-    </table>
-    <br>
-    <form action ="/profile/{{current_user.username}}" method="post" enctype=multipart/form-data >
-    <input type="file" name="file"><br>
-   <input type=submit value="Update">
-    </form>
-    <hr><hr>
-{% endblock %}
+{% block content %}
+  {% endblock %}
