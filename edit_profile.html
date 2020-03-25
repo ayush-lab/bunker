@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/sample.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lilita+One|Montserrat|Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+
+{% if user == current_user %}
+<body class="bg-info" >
+       <div class="  container-fluid text-center text-white mt-4">
+           <i ><h1 style="text-shadow: 2px 1px aquamarine;">{{user.username}} EDIT YOUR PROFILE! </h1></i>
+
+<br>
+<form action="/edit_profile/{{current_user.username}}" method="post" enctype=multipart/form-data>
+           <div class="row">
+               <div class="col-lg-1">
+
+               </div>
+
+               <div class="col-lg-5 col-sm-3 mt-4">
+                   <div class="container bg-white" style="height: 450px; width: 300px; border-radius: 25px; box-shadow: 10px 10px aquamarine;">
+                    <br>
+                    <H5 class="text-info"  style="text-shadow: 2px 1px aquamarine;" >UPDATE PERSONAL INFORMATION</H5>
+
+ <br>
+ <br>
+                    <div>
+                        <br>
+                         
+
+                        <label for="username" class="text-info">USERNAME:</label>
+                <input type="text" style="width:250px;" name="username" value ="{{current_user.username}}">
+                <br> <br> <br>
+                <label class="text-info" for="college">COLLEGE:</label>
+                <input  type="text" style="width:250px;" name ="college" value  ="{{current_user.college}}"> <br> <br> <br>
+                <label class="text-info" for="Status">STATUS:</label>
+                <input type="text" style="width:250px;" class="" name ="status" value ="{{current_user.about_me}}">
+                
+                <br><br>
+
+
+                
+             
+                    </div>
+
+                
+                   </div>
+
+
+               </div>
+
+               <div class="col-lg-5 col-sm-3 mt-4">
+                <div class="container bg-white" style="height: 450px; width: 300px; border-radius: 25px; box-shadow: 10px 10px aquamarine;">
+                 <br>
+                 <H5 class="text-info"  style="text-shadow: 2px 1px aquamarine;" >UPDATE DISPLAY PICTURE</H5>
+
+
+
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                
+                    <input type="file" class="ml-1"  style="width:230px;   background-color: aquamarine;" name="file"><br>
+                    <BR>
+                    </BR>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+           
+                
+
+                </div>
+
+
+            </div>
+
+
+           </div>
+        <input type=submit  style="background-color: aquamarine; font-weight: 700;" value="UPDATE">
+                    </form>
+
+
+       </div>
+    
+
+
+
+    
+</body>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <script src="{{ url_for('static', filename='js/bootstap.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+{% endif %}
+{% endblock %}
