@@ -1,15 +1,19 @@
+{% extends "base.html" %}
+
+{%block content%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Lilita+One|Montserrat|Ubuntu&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
         
 .link
@@ -45,7 +49,7 @@ color: black;
             </h1>
             <br>
             <br>
-            <p style="font-size: large; text-shadow: 1px 1px gray; " class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia doloremque perspiciatis inventore voluptas a voluptates at, iure vel quos distinctio cupiditate tenetur aspernatur sequi odit tempore praesentium rerum consequatur quidem eius corrupti vitae ex eaque ullam explicabo. Molestias placeat iste dolor eos nihil, illo esse laudantium, autem adipisci, sunt asperiores.</p>
+            <p style="font-size: large; text-shadow: 1px 1px gray; " class="text-justify">Presenting you the bunk-ker?! Are you tired of the shitty old outdated syllabus? Well, bunker makes it easy for you to bunk classes with your friends.  We basically match your low prioritized subjects with your friends! join to know more!</p>
  
 
 
@@ -61,25 +65,25 @@ color: black;
                     <div>
                         <br>
                         <br>
-                        <h1 class="text-center ">  WELCOME  </h1>
+                        <h1 class="text-center">  WELCOME  </h1>
                          <br>
 
-                        <form action="" >
+                        <form action="/login/" method="post" >
         
-                            <input type="text" name="" id="" placeholder="USERNAME" class="form-control text-center" style="width:250px; margin-left: 60px; margin-top: 50px;">
-                            <input type="password" name="" id="" placeholder="PASSWORD" class="form-control text-center ee" style="width:250px; margin-left: 60px; margin-top: 20px;">
+                            <input type="text" name="username" id="" placeholder="USERNAME" class="form-control text-center" style="width:250px; margin-left: 60px; margin-top: 50px;">
+                            <input type="password" name="password" id="" placeholder="PASSWORD" class="form-control text-center ee" style="width:250px; margin-left: 60px; margin-top: 20px;">
                                  
                             <br>
                             <br>
         
-                                     <a href="" class="link"> LOG IN</a>
-        
+                        <p1><button class="button"><b>SUMBIT</b></p1></button>
+                        </form>
                         <BR>
                         </BR>             
                         <br>
-                        <em><small>NEW TO BUNKAR? CLICK ON</small></em><a href="signup.html"><small>  SIGNUP</small></a>
+                        <em><small>NEW TO BUNKAR? CLICK ON</small></em><a href=" {{url_for('signup')}} "><small> SIGNUP</small></a>
         
-                        </form>
+                        
         
         
         
@@ -135,3 +139,5 @@ d.addEventListener("click",function()
 
 </body>
 </html>
+
+{% endblock %}

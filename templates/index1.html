@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{%block content%}
+
 <!doctype html>
 <html>
 <head>
@@ -12,22 +16,6 @@
 	
 </head>
 <body>
-	<nav class="navbar navbar-expand-sm navbar-dark fixed bg-dark">
-		<a href="index.html" class="navbar-brand"><strong><em>KACHI DEVS</em></strong></a>
-		<span class="navbar-text"></span>
-		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu">
-		  <span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse pl-5" id="mymenu">
-		<ul class="navbar-nav customnav" >
-		  <li class="nav-item"><a href="" class="nav-link">SERVICES</a></li>
-		  <li class="nav-item"><a href="https://github.com/ayush-lab/bunker" target="_blank" class="nav-link">PROJECTS</a></li>
-		  <li class="nav-item"><a href="#ABOUT" class="nav-link">ABOUT US</a></li>
-		
-		</ul>
-		</div>
-		
-		  </nav>
 
 		  
 	<!--header or banner-->
@@ -35,7 +23,7 @@
 	<div class="row " style="height: 600px;" >
 		<div class="col-lg-6 col-sm-6  bg-dark  logo" style="background-color: black;
 	
-		background-image: url(../image/logo\ \(2\).jpg);
+		background-image:  url({{ url_for('static',filename='img/logo (2).jpg') }});
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
@@ -44,32 +32,15 @@
 		
 		</div>
 		<div class="col-lg-6 col-sm-6  text-center "  style="background-color: burlywood;" >	
-			<ul class="nav  mt-3" style="margin-left:120px">
-				<li class="nav-item">
-				  <a class="nav-link active" style="font-weight: 600; text-decoration: none; color:white;" href="/home">HOME</a>
-				</li>
-				<li class="nav-item">
-				  <a class="nav-link" style=" font-weight: 600;text-decoration: none; color: white;" href="/login">LOG IN</a>
-				</li>
-				<li class="nav-item">
-				  <a class="nav-link" style="font-weight: 600;text-decoration: none; color: white;" href="#contact" >CONTACT</a>
-				</li>
-				<li class="nav-item">
-				  <a class="nav-link " href="/signup" style="font-weight: 600;text-decoration: none; color: white;" target="_blank" >JOIN</a>
-				</li>
-			  </ul>
-			  <br>
-			  <br>
-			  <br>
-			  <br>
+			<h> </h>
 
-			  <h1  style="text-shadow: 8px 8px black; float: left; font-size: 4.1em; color: white; margin-left: 60px;"><em>WELCOME</em></h1>
+			  <h1  style="text-shadow: 10px 10px black; float: left; font-size: 4.1em; color: white; margin-left: 60px;"><em>WELCOME</em></h1>
 			  <br>
 			  <br>
 			  <br>
 			  <br>
 			  <div class="ml-5" style="width: 400px; ">
-			  <p class="text-justify text-white">Presenting you the bunker! The website that helps releasing your tensions and allows you to meet up with your friends conviniently! Lets have you registered!</p>
+			  <p class="text-justify text-white">Presenting you the bunk-ker?! Are you tired of the shitty old outdated syllabus? Well, bunker makes it easy for you to bunk classes with your friends.  We basically match your low prioritized subjects with your friends! join to know more!</p>
 			</div>
 			
 			<br>
@@ -165,7 +136,7 @@
 						
 						<div class="row">
 							<div class="col-lg-6 col-sm-12 ">
-								<img src="image/boy.svg" style="height: 350px;" alt="" id="boy">
+								<img src="{{ url_for('static',filename='img/boy.svg')}}" style="height: 350px;" alt="" id="boy">
 				
 							</div>
 							<div class="col-lg-6 col-sm-12" >
@@ -196,7 +167,7 @@
 								<p class="ml-3  text-white text-center text-justify" style="font-size: large; ">BUNKAR automatically tells you what would be the best period in your hectic day to go on bunk with your friends. All you need to do is to LOGIN TO BUNKAR </p>
 							</div>
 							<div class="col-lg-6 col-sm-12" >
-								<img src="image/graphicD.svg" style="height: 400px;" alt="">
+								<img src="{{ url_for('static',filename='img/graphicD.svg')}}" style="height: 400px;" alt="">
 								<br>
 								<br>
 								<br>
@@ -450,20 +421,4 @@
 	
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% endblock %}
