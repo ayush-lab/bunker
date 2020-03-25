@@ -1,69 +1,109 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <body>
- 
+    <nav class="navbar navbar-expand-sm navbar-dark fixed bg-dark">
+		<a href="index.html" class="navbar-brand"><strong><em>Kachi DEVS.</em></strong></a>
+		<span class="navbar-text"></span>
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse pl-5" id="mymenu">
+		<ul class="navbar-nav customnav" >
+		  <li class="nav-item"><a href="" class="nav-link">SERVICES</a></li>
+		  <li class="nav-item"><a href="https://github.com/ayush-lab/bunker" target="_blank" class="nav-link">PROJECTS</a></li>
+		  <li class="nav-item"><a href="#ABOUT" class="nav-link">ABOUT US</a></li>
+		
+		</ul>
+    </div>
+    
+		
+		  </nav>
     <div class="container-fluid" style=" background: linear-gradient( azure 10%,lightblue 80%);">
-        <div class="container mt-4" style="width: 900px; height: 1200px; background-color: azure; box-shadow: 5px 5px gray; opacity: 0.9;">
+        <div class="container mt-4" style="width: 1000px; height: 1200px; background-color: azure; box-shadow: 5px 5px gray; opacity: 0.9;">
   
-        <div class="container-fluid side">
+        <div class="container-fluid " style="background-image: url(../image/banner.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 200px;">
   
             
             <a href="edit_profile.html"   > <i style="font-size: large; float: right; margin-top: 160px;" class="fas fa-edit"></i>  </a>            
-          <h3 style="float: right; margin-top: 150px; margin-right: 60px;" class="text-white"><em>ABHAY CHAUHAN</em></h3>
-          <div class="dp">
+          <h3 style="float: right; margin-top: 150px; margin-right: 60px;" class="text-white"><em></em></h3>
+          <div style="background-image: url(../image/banner.jpg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          height: 125px;
+          width: 125px;
+          border: 4px solid white;
+          border-radius: 50%;
+          position: relative;
+          top: 140px;" >
   
 
 
-             <button class="btn btn-info" style="margin-left: 82px;  border-radius: 50%;" ondblclick="abhay()">Edit</button>
 
-            <div style="margin-left: 300px; margin-top: 36px; display: none;" id="edit">
-                <form action ="/profile/{{user.username}}" method="post" enctype=multipart/form-data >
-                  
-                    <input  type="file" name="file">
-                    
-                   
 
-                   <input style=" margin-left: 250px;" type=submit value="upload">
-                    </form>
-                   <hr>
+
+             </div>
+
+            </div>
+            
               
-
-                  </div>
+            <div style="margin-left: 150px;">
+              <br>
+              <h3 style="color: black;" ><em>ABHAY CHAUHAN</em></h3>
             </div>
-
+            
+            <div style="float: right; ">
+              <button style="margin-left: 3px;"><em>FOLLOW</em></button>
+              <button style="margin-left: 3px;"><em>UNFOLLOW</em></button>
+              <button style="margin-left: 3px;"><em>FOLLOWING</em></button>
             </div>
-
+          
 
           
-          <div class="row" style="margin-top: 160px;">
-              <div class="col-lg-4">
+          <div class="row" style="margin-top: 140px; margin-left: 30px; ">
+              <div class="col-lg-4 col-sm-4">
                   
-                  <div class=" side1 blog text-center" style="margin-top: 0px; border-radius: 10px;">
+                  <div class=" side1 blog  text-white " style="margin-top: 0px; border-radius: 10px; ">
                     <br>
-                    <h5 class=" text-white">PERSONAL INFO.</h5>
+                    <h5 class=" text-white" style="margin-left: 20px;">PERSONAL INFO.</h5>
+                    <br>
+                    
+
+                    <i style="margin-left: 10px;">COLLEGE:</i>
+                    <BR></BR>
+                    <i style="margin-left: 10px;">NAME:</i>
   
-  
+                    
+
+
+
+
+
                   </div>        
   
               </div>
-              <div class="col-lg-7">
-                  <div class="container blog  text-center" style="height: 80px; width: 400px;  background-color: gray; border-radius: 10px;">
-  
-                                          <h5 class="text-white">STATUS</h5>
+              <div class="col-lg-7 col-sm-7">
+                  <div class="container blog  text-center" style="height: 180px; width: 400px;  background-color: gray; border-radius: 10px;">
+                          <br>
+
+                                          <h4 class="text-white">STATUS</h4>
+
+
+
+                                          <div>
+                                            <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam incidunt possimus tenetur odit sequi rerum reprehenderit corrupti iste earum molestias?</p>
+                                          </div>
   
   
   
                   </div>
                   <br>
-                  <div class="container blog text-center" style="height: 180px; width: 400px; background-color: gray; border-radius: 10px;">
-  
-                    <div>
-                        <h4 class="text-white">ABOUT</h4>
-
-                    </div>
-                  </div>
+                  
                   
                   
   
@@ -90,6 +130,4 @@
 
     </script>
 </body>
-
-
 {% endblock %}
