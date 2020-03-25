@@ -13,7 +13,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lilita+One|Montserrat|Ubuntu&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         
 .link
@@ -27,19 +27,25 @@ color: black;
 }
 .link:hover
 {
-	background-color: lightblue;
+    background-color: white;
+    color: black;
 }
 .form-control:hover
 {
 	box-shadow: 5px 5px lightblue;
-	opacity: 0.7;
+	opacity: 0.9;
 	background-color: whitesmoke;
 }
 
     </style>
 </head>
 <body>
-<div class="container-fluid aaaa" style="height: 950px;">
+<div class="container-fluid  " style="height: 950px; background-image: url(../image/scg-canvas-background-animation-11.jpg);
+background-repeat: repeat;
+background-position: center;
+background-size: cover;
+height: 1000px;
+    ">
     
    <div class="row">
        <div class="col-lg-6  col-sm-4">
@@ -70,7 +76,7 @@ color: black;
 
                         <form action="/login/" method="post" >
         
-                            <input type="text" name="username" id="" placeholder="USERNAME" class="form-control text-center" style="width:250px; margin-left: 60px; margin-top: 50px;">
+                            <input type="text" name="username" id=""    placeholder="USERNAME" class="form-control text-center" style="color: black;  width:250px; margin-left: 60px; margin-top: 50px;">
                             <input type="password" name="password" id="" placeholder="PASSWORD" class="form-control text-center ee" style="width:250px; margin-left: 60px; margin-top: 20px;">
                                  
                             <br>
