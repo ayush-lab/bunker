@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{%block content%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,33 +32,25 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Username</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Priority</th>
           </tr>
         </thead>
         <tbody>
+            {% for i in query %}
           <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+            <td>{{i.username}}</td>
+            <td>{{i.subject}}</td>
+            <td>{{i.priority}}</td>
+            </tr>
+            {% endfor %}
         </tbody>
       </table>
     
     
 </body>
 </html>
+
+{% endblock %}
