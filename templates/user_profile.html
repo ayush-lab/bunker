@@ -1,37 +1,41 @@
-{% extends "base.html" %}
+  {% extends "base.html" %}
 
-{% block content %}
-<body>
-    <nav class="navbar navbar-expand-sm navbar-dark fixed bg-dark">
-		<a href="index.html" class="navbar-brand"><strong><em>Kachi DEVS.</em></strong></a>
-		<span class="navbar-text"></span>
-		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu">
-		  <span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse pl-5" id="mymenu">
-		<ul class="navbar-nav customnav" >
-		  <li class="nav-item"><a href="" class="nav-link">SERVICES</a></li>
-		  <li class="nav-item"><a href="https://github.com/ayush-lab/bunker" target="_blank" class="nav-link">PROJECTS</a></li>
-		  <li class="nav-item"><a href="#ABOUT" class="nav-link">ABOUT US</a></li>
-		
-		</ul>
-    </div>
-    
-		
-		  </nav>
+{%block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/sample.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lilita+One|Montserrat|Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+
+  
     <div class="container-fluid" style=" background: linear-gradient( azure 10%,lightblue 80%);">
         <div class="container mt-4" style="width: 1000px; height: 1200px; background-color: azure; box-shadow: 5px 5px gray; opacity: 0.9;">
   
-        <div class="container-fluid " style="background-image: url(../image/banner.jpg);
+        <div class="container-fluid " style="background-image:  url({{ url_for('static',filename='img/banner.jpg') }});
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         height: 200px;">
   
-            
-            <a href="edit_profile.html"   > <i style="font-size: large; float: right; margin-top: 160px;" class="fas fa-edit"></i>  </a>            
+            {% if user==current_user %}
+            <a href="/edit_profile/{{current_user.username}}"   > <i style="font-size: large; float: right; margin-top: 160px;" class="fas fa-edit"></i>  </a>            
           <h3 style="float: right; margin-top: 150px; margin-right: 60px;" class="text-white"><em></em></h3>
-          <div style="background-image: url(../image/banner.jpg);
+          {% endif %}
+
+         
+          <div style="background-image:  url({{img_scr}});
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -41,28 +45,42 @@
           border-radius: 50%;
           position: relative;
           top: 140px;" >
-  
-
-
-
-
+           
 
              </div>
 
             </div>
-            
-              
-            <div style="margin-left: 150px;">
+             <div style="margin-left: 150px;">
               <br>
-              <h3 style="color: black;" ><em>ABHAY CHAUHAN</em></h3>
+              <h3 style="color: black;" ><em>{{user.username}}</em></h3>
             </div>
+
             
-            <div style="float: right; ">
-              <button style="margin-left: 3px;"><em>FOLLOW</em></button>
-              <button style="margin-left: 3px;"><em>UNFOLLOW</em></button>
-              <button style="margin-left: 3px;"><em>FOLLOWING</em></button>
+            
+              <div class="row" style="margin-top: 90px; margin-left: 30px; ">
+
+      </div> 
+            
+            
+                
+           
+            
+            <div style="float: right; margin-left: 200px;margin-top: 10px ">
+                
+              {% if user == current_user %}
+
+
+              {% elif not current_user.is_following(user) %}
+              <a href="/follow/{{user.username}}/"><button style="margin-left: 3px;"><em>FOLLOW</em></button></a>
+             
+              {% elif current_user.is_following(user) %}
+              <a href ="/unfollow/{{user.username}}/"><button style="margin-left: 3px;"><em>UNFOLLOW</em></button></a>
+
+         
+              {% endif %}
+            
             </div>
-          
+       
 
           
           <div class="row" style="margin-top: 140px; margin-left: 30px; ">
@@ -70,13 +88,10 @@
                   
                   <div class=" side1 blog  text-white " style="margin-top: 0px; border-radius: 10px; ">
                     <br>
-                    <h5 class=" text-white" style="margin-left: 20px;">PERSONAL INFO.</h5>
+                    <h5 class=" text-white" style="margin-left: 20px;"><b>STATUS</b></h5>
                     <br>
                     
-
-                    <i style="margin-left: 10px;">COLLEGE:</i>
-                    <BR></BR>
-                    <i style="margin-left: 10px;">NAME:</i>
+                    <h class="text-white"><h>{{user.about_me}}</h></h>
   
                     
 
@@ -91,12 +106,16 @@
                   <div class="container blog  text-center" style="height: 180px; width: 400px;  background-color: gray; border-radius: 10px;">
                           <br>
 
-                                          <h4 class="text-white">STATUS</h4>
+                                          <h4 class="text-white"><b>PERSONAL INFORMATION</b></h4>
 
 
 
                                           <div>
-                                            <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam incidunt possimus tenetur odit sequi rerum reprehenderit corrupti iste earum molestias?</p>
+
+                    <i style="margin-left: 10px;"><b>COLLEGE:</b> {{user.college}}</i>
+                    <BR></BR>
+                    <i style="margin-left: 10px;"><b>NAME:</b> {{user.username}}</i>
+                                            
                                           </div>
   
   
@@ -130,4 +149,15 @@
 
     </script>
 </body>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <script src="{{ url_for('static', filename='js/bootstap.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
 {% endblock %}
