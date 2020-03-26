@@ -29,7 +29,7 @@
         background-size: cover;
         height: 200px;">
   
-            {% if user==current_user %}
+            {% if u==current_user %}
             <a href="/edit_profile/{{current_user.username}}"   > <i style="font-size: large; float: right; margin-top: 160px;" class="fas fa-edit"></i>  </a>            
           <h3 style="float: right; margin-top: 150px; margin-right: 60px;" class="text-white"><em></em></h3>
           {% endif %}
@@ -52,7 +52,7 @@
             </div>
              <div style="margin-left: 250px;">
               <br>
-              <h3 style="color: black;" ><em>{{user.username}}</em></h3>
+              <h3 style="color: black;" ><em>{{u.username}}</em></h3>
             </div>
 
             
@@ -67,42 +67,37 @@
             
             <div style="float: right; margin-left: 200px;margin-top: 10px ">
                 
-              {% if user == current_user %}
+              {% if u == current_user %}
 
 
-              {% elif not current_user.is_following(user) %}
-              <a href="/follow/{{user.username}}/"><button style="margin-left: 3px;"><em>FOLLOW</em></button></a>
+              {% elif not current_user.is_following(u) %}
+              <a href="/follow/{{u.username}}/"><button style="margin-left: 3px;"><em>FOLLOW</em></button></a>
              
-              {% elif current_user.is_following(user) %}
-              <a href ="/unfollow/{{user.username}}/"><button style="margin-left: 3px;"><em>UNFOLLOW</em></button></a>
+              {% elif current_user.is_following(u) %}
+              <a href ="/unfollow/{{u.username}}/"><button style="margin-left: 3px;"><em>UNFOLLOW</em></button></a>
 
          
               {% endif %}
             
             </div>
-           <div class="row" style="margin-top: 150px; margin-left: 50px;">
+           <div class="row" style="margin-top: 5px; margin-left: 50px;">
               <div class="col-lg-6">
             
                 <br>
                 
                 <div   >
-                  <h5>COLLEGE:</h5>
+                  <b><h5>COLLEGE</b>:  {{u.college}}</h5>
                   <br>
                   <br>
             
-                  <h5>STATUS:</h5>
+                  <h5><b>STATUS:</b>  {{u.about_me}}{{current_user.time[24].priority}}</h5>
                   
                   </div>
               </div>
             
-            
-            
-            
              </div>
        
-
-          
-            <div class="row  text-center " style="margin-top: 300px; margin-left: 100px;">
+            <div class="row  text-center " style="margin-top: 100px; margin-left: 100px;">
               <h3 style="margin-left: 300px;  color: black;">MY TIME-TABLE</h3>
               <br>
               <br>
@@ -111,83 +106,84 @@
                   <div class="col-lg-8">
                     
                     <div class="container hh">
-                      <table class="table table-hover ">
-                        <thead class="thead-dark">
-                          <tr>
-                          <th scope="col"></th>
-                          <th scope="col">8:30-9:20</th>
-                          <th scope="col">9:20-10:10</th>
-                          <th scope="col">10:10-11:00</th>
-                          <th scope="col">11:00-11:50</th>
-                          <th scope="col">11:50-12:40</th>
-                          <th scope="col">12:40-01:30</th>
-                          <th scope="col">01:30-02:20</th>
-                          <th scope="col">02:20-03:10</th>
-                          <th scope="col">03:10-04:00</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                          <th scope="row">Monday</th>
-                            <td ><a href="#">1</a></td>
-                            <td ><a href="#">2</a></td>
-                            <td ><a href="#">3</a></td>
-                            <td  ><a href="#">4</a></td>
-                            <td  ><a href="#">5</a></td>
-                            <td ><a href="#">6</a></td>
-                            <td  ><a href="#">7</a></td>
-                            <td  ><a href="#">8</a></td>
-                            <td  ><a href="#">9</a></td>
-                          </tr>
-                  
-                          <tr>
-                          <th scope="row">Tuesday</th>
-                            <td ><a href="#">1</a></td>
-                            <td ><a href="#">2</a></td>
-                            <td ><a href="#">3</a></td>
-                            <td  ><a href="#">4</a></td>
-                            <td  ><a href="#">5</a></td>
-                            <td ><a href="#">6</a></td>
-                            <td  ><a href="#">7</a></td>
-                            <td  ><a href="#">8</a></td>
-                            <td  ><a href="#">9</a></td>
-                          </tr>
-                          <tr>
-                          <th scope="row">Wednesday</th>
-                            <td ><a href="#">1</a></td>
-                            <td ><a href="#">2</a></td>
-                            <td ><a href="#">3</a></td>
-                            <td  ><a href="#">4</a></td>
-                            <td  ><a href="#">5</a></td>
-                            <td ><a href="#">6</a></td>
-                            <td  ><a href="#">7</a></td>
-                            <td  ><a href="#">8</a></td>
-                            <td  ><a href="#">9</a></td>
-                          </tr>
-                          <tr>
-                          <th scope="row">Thursday</th>
-                            <td ><a href="#">1</a></td>
-                            <td ><a href="#">2</a></td>
-                            <td ><a href="#">3</a></td>
-                            <td  ><a href="#">4</a></td>
-                            <td  ><a href="#">5</a></td>
-                            <td ><a href="#">6</a></td>
-                            <td  ><a href="#">7</a></td>
-                            <td  ><a href="#">8</a></td>
-                            <td  ><a href="#">9</a></td>
-                          </tr>
-                          <tr>
-                          <th scope="row">Friday</th>
-                            <td ><a href="#">1</a></td>
-                            <td ><a href="#">2</a></td>
-                            <td ><a href="#">3</a></td>
-                            <td  ><a href="#">4</a></td>
-                            <td  ><a href="#">5</a></td>
-                            <td ><a href="#">6</a></td>
-                            <td  ><a href="#">7</a></td>
-                            <td  ><a href="#">8</a></td>
-                            <td  ><a href="#">9</a></td>
-                          </tr>
+    <table class="table table-hover aa">
+      <thead class="thead-dark">
+        <tr>
+        <th scope="col"></th>
+        <th scope="col">8:30-9:20</th>
+        <th scope="col">9:20-10:10</th>
+        <th scope="col">10:10-11:00</th>
+        <th scope="col">11:00-11:50</th>
+        <th scope="col">11:50-12:40</th>
+        <th scope="col">12:40-01:30</th>
+        <th scope="col">01:30-02:20</th>
+        <th scope="col">02:20-03:10</th>
+        <th scope="col">03:10-04:00</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <th scope="row">Monday</th>
+          <td ><a href="/Monday/1">{{user[0].subject}}</a></td>
+            <td ><a href="/Monday/2">{{user[1].subject}}</a></td>
+          <td ><a href="/Monday/3">{{user[2].subject}}</a></td>
+           <td ><a href="/Monday/4">{{user[3].subject}}</a></td>
+            <td ><a href="/Monday/5">{{user[4].subject}}</a></td>
+            <td ><a href="/Monday/6">{{user[5].subject}}</a></td>
+            <td ><a href="/Monday/7">{{user[6].subject}}</a></td>
+          <td ><a href="/Monday/8">{{user[7].subject}}</a></td>
+
+        </tr>
+
+        <tr>
+        <th scope="row">Tuesday</th>
+         <td ><a href="/Tuesday/1">{{user[8].subject}}</a></td>
+           <td ><a href="/Tuesday/2">{{user[9].subject}}</a></td>
+           <td ><a href="/Tuesday/3">{{user[10].subject}}</a></td>
+           <td ><a href="/Tuesday/4">{{user[11].subject}}</a></td>
+         <td ><a href="/Tuesday/5">{{user[12].subject}}</a></td>
+         <td ><a href="/Tuesday/6">{{user[13].subject}}</a></td>
+           <td ><a href="/Tuesday/7">{{user[14].subject}}</a></td>
+           <td ><a href="/Tuesday/8">{{user[15].priority}}</a></td>
+           
+        </tr>
+        <tr>
+        <th scope="row">Wednesday</th>
+         <td ><a href="/Wednesday/1">{{user[16].day}}</a></td>
+        <td ><a href="/Wednesday/2">{{user[17].subject}}</a></td>
+         <td ><a href="/Wednesday/3">{{user[18].subject}}</a></td>
+          <td ><a href="/Wednesday/4">{{user[19].subject}}</a></td>
+          <td ><a href="/Wednesday/5">{{user[20].subject}}</a></td>
+        <td ><a href="/Wednesday/6">{{user[21].subject}}</a></td>
+        <td ><a href="/Wednesday/7">{{user[22].subject}}</a></td>
+      <td ><a href="/Wednesday/8">{{user[23].subject}}</a></td>
+          
+        </tr>
+        <tr>
+        <th scope="row">Thursday</th>
+          <td ><a href="/Thursday/1">{{user[24].subject}}</a></td>
+         <td ><a href="/Thursday/2">{{user[25].subject}}</a></td>
+         <td ><a href="/Thursday/3">{{user[26].subject}}</a></td>
+        <td ><a href="/Thursday/4">{{user[27].subject}}</a></td>
+         <td ><a href="/Thursday/5">{{user[28].subject}}</a></td>
+         <td ><a href="/Thursday/6">{{user[29].subject}}</a></td>
+        <td ><a href="/Thursday/7">{{user[30].subject}}</a></td>
+          <td ><a href="/Thursday/8">{{user[31].priority}}</a></td>
+        </tr>
+        <tr>
+        <th scope="row">Friday</th>
+         <td ><a href="/Friday/1">{{user[32].subject}}</a></td>
+         <td ><a href="/Friday/2">{{user[33].subject}}</a></td>
+         <td ><a href="/Friday/3">{{user[34].subject}}</a></td>
+        <td ><a href="/Friday/4">{{user[34].priority}}</a></td>
+         <td ><a href="/Friday/5">{{user[35].subject}}</a></td>
+         <td ><a href="/Friday/6">{{user[36].subject}}</a></td>
+        <td ><a href="/Friday/7">{{user[37].subject}}</a></td>
+          <td ><a href="/Friday/8">{{user[38].day}}</a></td>
+        
+        </tr>
+        
+    
                           
                         </tbody>
                         </table>

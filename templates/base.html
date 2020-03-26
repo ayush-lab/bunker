@@ -8,62 +8,40 @@
       {% endif %}
 
 
-    </head>
 
-    <body style="background-color:brown;">
-<style>
-  a:link, a:visited {
-  background-color: black;
-  color: white;
-  padding: 15px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-a:hover, a:active {
-  background-color: darkorange;
-</style>
         
         
         <nav class="navbar navbar-expand-sm navbar-dark fixed bg-dark">
-			<a href="index.html" class="navbar-brand"><strong><em>Kachi DEVS.</em></strong></a>
-			<span class="navbar-text"></span>
-			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse pl-5" id="mymenu">
-			<ul class="navbar-nav customnav" >
-			  <li class="nav-item"><a href="" class="nav-link">SERVICES</a></li>
-			  <li class="nav-item"><a href="https://github.com/ayush-lab/bunker" target="_blank" class="nav-link">PROJECTS</a></li>
-			  <li class="nav-item"><a href="#ABOUT" class="nav-link">ABOUT US</a></li>
-			
-			</ul>
-			</div>
-			
-			  </nav>
-        <div> <p style= "color:Orange;" >Bunker <a href="/timetable">BUNKER?</a>
+      <a href="/index/" class="navbar-brand"><strong><em>KACHI DEVS</em></strong></a>
+      <span class="navbar-text"></span>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse pl-5" id="mymenu">
+      <ul class="navbar-nav customnav" >
+        {% if not current_user.is_authenticated %}
+        <li class="nav-item"><a href="/signup/" class="nav-link">REGISTER</a></li>
+        {% endif %}
+        <li class="nav-item"><a href="https://github.com/ayush-lab/bunker" target="_blank" class="nav-link">PROJECTS</a></li>
+        <li class="nav-item"><a href="/index/" class="nav-link">ABOUT US</a></li>
+        {% if current_user.is_authenticated %}
+          <li class="nav-item"><a href="/dashboard/" class ="nav-link">DASHBOARD</a></li>
+          <li class="nav-item"><a href="/editboard/" class ="nav-link">EDIT DASHBOARD</a></li>
+        <li class="nav-item"><a href="/home/" class ="nav-link">MY TIMETABLE</a></li>
+        <li class="nav-item"><a href="/profile/{{current_user.username}}" class ="nav-link"> PROFILE</a>
+        <li class="nav-item"><a href="/logout/" class="nav-link">LOGOUT</a></li>
+        {% else %}
+        <li class="nav-item"><a href="/login/" class="nav-link">LOGIN</a></li>
+        {% endif %}
+      </ul>
+      </div>
+      
+        </nav>
+        
 
-                        <a href="/signup">register now</a>
-                        <a href="/dashboard">information page</a>
-            {% if current_user.is_authenticated %}
-                        <a href="/logout">Logout</a>
-            {% else %}
-                        <a href="/login">Login</a>
-            {% endif %}
-
-
-        </div>
-
-
-        <hr>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-           {% for message in messages %}
-            <p1 style="color:orange"><l1>{{message}}</l1></p1>
-        {% endfor %}
-        {%endif%}
-        {%endwith%}
+      
         {% block content %}{% endblock %}
     </body>
+
+    </head>
 </html>
