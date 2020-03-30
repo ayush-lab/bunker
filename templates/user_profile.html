@@ -2,22 +2,7 @@
 
 {%block content%}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/sample.css') }}">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Lilita+One|Montserrat|Ubuntu&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-</head>
+
 
   
     <div class="container-fluid" style=" background: linear-gradient( azure 10%,lightblue 80%);">
@@ -67,14 +52,18 @@
             
             <div style="float: right; margin-left: 200px;margin-top: 10px ">
                 
-              {% if u == current_user %}
-
+              
+              <a href="/following/{{u.username}}/"><button style="margin-left: 3px;"><em>Following</em></button></a>
+              {{counting_following}}
+              <a href="/followers/{{u.username}}/"><button style="margin-left: 3px;"><em>Followers</em></button></a>
+              {{counting_followers}}
+              {% if  u == current_user %}
 
               {% elif not current_user.is_following(u) %}
-              <a href="/follow/{{u.username}}/"><button style="margin-left: 3px;"><em>FOLLOW</em></button></a>
+              <a href="/follow/{{u.username}}/"><button style="margin-left: 3px;"><em>Follow</em></button></a>
              
               {% elif current_user.is_following(u) %}
-              <a href ="/unfollow/{{u.username}}/"><button style="margin-left: 3px;"><em>UNFOLLOW</em></button></a>
+              <a href ="/unfollow/{{u.username}}/"><button style="margin-left: 3px;"><em>Unfollow</em></button></a>
 
          
               {% endif %}
@@ -90,7 +79,7 @@
                   <br>
                   <br>
             
-                  <h5><b>STATUS:</b>  {{u.about_me}}{{current_user.time[24].priority}}</h5>
+                  <h5><b>STATUS:</b>  {{u.about_me}}</h5>
                   
                   </div>
               </div>
@@ -144,12 +133,12 @@
          <td ><a href="/Tuesday/5">{{user[12].subject}}</a></td>
          <td ><a href="/Tuesday/6">{{user[13].subject}}</a></td>
            <td ><a href="/Tuesday/7">{{user[14].subject}}</a></td>
-           <td ><a href="/Tuesday/8">{{user[15].priority}}</a></td>
+           <td ><a href="/Tuesday/8">{{user[15].subject}}</a></td>
            
         </tr>
         <tr>
         <th scope="row">Wednesday</th>
-         <td ><a href="/Wednesday/1">{{user[16].day}}</a></td>
+         <td ><a href="/Wednesday/1">{{user[16].subject}}</a></td>
         <td ><a href="/Wednesday/2">{{user[17].subject}}</a></td>
          <td ><a href="/Wednesday/3">{{user[18].subject}}</a></td>
           <td ><a href="/Wednesday/4">{{user[19].subject}}</a></td>
@@ -168,18 +157,18 @@
          <td ><a href="/Thursday/5">{{user[28].subject}}</a></td>
          <td ><a href="/Thursday/6">{{user[29].subject}}</a></td>
         <td ><a href="/Thursday/7">{{user[30].subject}}</a></td>
-          <td ><a href="/Thursday/8">{{user[31].priority}}</a></td>
+          <td ><a href="/Thursday/8">{{user[31].subject}}</a></td>
         </tr>
         <tr>
         <th scope="row">Friday</th>
          <td ><a href="/Friday/1">{{user[32].subject}}</a></td>
          <td ><a href="/Friday/2">{{user[33].subject}}</a></td>
          <td ><a href="/Friday/3">{{user[34].subject}}</a></td>
-        <td ><a href="/Friday/4">{{user[34].priority}}</a></td>
+        <td ><a href="/Friday/4">{{user[34].subject}}</a></td>
          <td ><a href="/Friday/5">{{user[35].subject}}</a></td>
          <td ><a href="/Friday/6">{{user[36].subject}}</a></td>
         <td ><a href="/Friday/7">{{user[37].subject}}</a></td>
-          <td ><a href="/Friday/8">{{user[38].day}}</a></td>
+          <td ><a href="/Friday/8">{{user[38].subject}}</a></td>
         
         </tr>
         
