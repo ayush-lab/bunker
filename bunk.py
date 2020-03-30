@@ -19,6 +19,7 @@ app.config[' SQLAlCHEMY_TRACK_MODIFICATIONS '] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///base.db'
 app.config['SECRET_KEY'] = "bunker_app_security_123456"
 app.config["UPLOAD_FOLDER"] = basedir + "/static/img"
+WHOOSH_BASE= os.path.join(basedir,'search.db')
 
 test= basedir + "/static/img"
 
@@ -39,9 +40,9 @@ followers = db.Table('followers', db.Column('follower_id', db.Integer,db.Foreign
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(15), unique=True)
-    password = db.Column(db.String(80), unique=True)
-    profile_pic=db.Column(db.String(50),nullable=False,default="img/default.jpeg")
+    username = db.Column(db.String(15), unique=False)
+    password = db.Column(db.String(80), unique=False)
+    profile_pic=db.Column(db.String(50),nullable=False,default="img/Default.jpg")
     #email = db.Column(db.String(80), unique=False)  # only until we are on development server
     about_me = db.Column(db.String(140))
     college= db.Column(db.String(40), default = "Ajay kumar Garg engineering college")
@@ -57,7 +58,8 @@ class User(UserMixin, db.Model):
     	bunker=Timetable.query.join(followers,(followers.c.followed_id==Timetable.OP_id)).filter(followers.c.follower_id ==self.id)
     	importance1 = Timetable.query.filter_by(priority= "M")
     	importance2 = Timetable.query.filter_by(priority= "H")
-    	return bunker.intersect(importance1).union(importance2) 
+    	impfinal = importance1.union(importance2)
+    	return bunker.intersect(impfinal) 
 
     def follow(self,user):
     	if not self.is_following(user):
@@ -80,16 +82,14 @@ class Timetable(UserMixin,db.Model):
 	id= db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(15), unique=False)
 	day= db.Column(db.String, unique=False, nullable=True)
-	period_no =db.Column(db.Integer, unique=False, nullable=False,default="None")
-	subject =db.Column(db.String,unique=False, nullable=False, default="None")
-	priority =db.Column(db.String,unique=False, nullable=False, default="None")
+	period_no =db.Column(db.Integer, unique=False, nullable=True,default=1)
+	subject =db.Column(db.String,unique=False, nullable=True, default="None")
+	priority =db.Column(db.String,unique=False, nullable=True, default="None")
 	OP_id =db.Column(db.Integer,db.ForeignKey("user.id"))
 
 
 
-from forms import loginForm, registerForm,PostForm,Timetableform
-# timestamp=db.Column(db.DateTime, index=True, default=datetime.utcnow)
-# user_id= db.Column(db.Integer, db.ForeignKey('user.id'))
+
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -104,6 +104,7 @@ def allowed_file(filename):
 @login_required
 def logout():
 	logout_user()
+	flash("you have been successfully logged out","success")
 	return redirect(url_for("login"))
 
 @app.route("/signup",methods=["POST","GET"])
@@ -115,12 +116,19 @@ def signup():
     #form = registerForm()
     #if form.validate_on_submit():
     if request.method == "POST":
-    	print("done")
-    	new_user=User(username=request.form["username"],password=generate_password_hash(request.form["password"]))
-    	db.session.add(new_user)
-    	db.session.commit()
+    	if User.query.filter_by(username=request.form["username"]) == True:
+    		flash('username already taken', 'danger')
+    	else:
+	    	if(request.form["password"] == request.form["confirm_password"]):
+	    		new_user=User(username=request.form["username"],password=generate_password_hash(request.form["password"]))
+	    		db.session.add(new_user)
+	    		db.session.commit()
+	    		flash("account created successfully",'success')
+	    		return redirect(url_for("login"))
+	    	else:
+	    		flash("make sure the password is equal to confirm password",'warning')
 
-    	return redirect(url_for("login"))
+    	
     return render_template("signup1.html")
 
 
@@ -128,19 +136,22 @@ def signup():
 @app.route("/login/",methods=["POST","GET"])
 def login():
 	if request.method == "POST":
-		print("a")
 		user= User.query.filter_by(username=request.form["username"]).first()
 		if user:
 			if check_password_hash(user.password,request.form["password"]):
 				login_user(user)
 				print("a")
+				flash(current_user.username + ", you have been Successfully bunked in!",'success')
 				return redirect(url_for("dashboard"))
 				next_page = request.args.get('next')
 				if not next_page or url_parse(next_page).netloc != '':
 					next_page = url_for('dashboard')
 
 					return redirect(next_page)
+			flash("Invalid password", 'warning')
 			return redirect(url_for("login"))
+		else:
+			flash("Invalid username",'warning')
 	return render_template("login1.html",title="Login")
 
 
@@ -581,14 +592,21 @@ def profile(username):
 			db.session.commit()
 		else:
 			'''
-	user = Timetable.query.filter_by(username=current_user.username).all()
+	user = Timetable.query.filter_by(username=username).all()
 	u=User.query.filter_by(username=username).first_or_404()
 	img_scr=url_for('static', filename= u.profile_pic) 
-	return render_template("user_profile.html",user=user, img_scr=img_scr,u=u) 
+	
+	counting_followers  = len(u.followers.all() )
+	
+    
+	counting_following = len(u.followed.all())
+
+	return render_template("user_profile.html",user=user, img_scr=img_scr,u=u,counting_followers = counting_followers, counting_following=counting_following) 
 
 
 
 @app.route("/edit_profile/<username>",methods=["POST","GET"])
+@app.route("/edit_profile/<username>/",methods=["POST","GET"])
 @login_required
 def edit_profile(username):
 	if request.method == "POST":
@@ -613,11 +631,11 @@ def edit_profile(username):
 				file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 				current_user.profile_pic = user_pic
 				db.session.commit()
-				return redirect(url_for('.profile', username=request.form["username"]))
+				return redirect(url_for('profile', username=request.form["username"]))
 			else:
 				return '''<p> this file is not allowed <p>''' 
 		else:
-			return redirect(url_for('.profile', username=request.form["username"]))
+			return redirect(url_for('profile', username=request.form["username"]))
 
 
 	user=User.query.filter_by(username=username).first()
@@ -632,7 +650,40 @@ def edit_profile(username):
 
 	
 	
+@app.route("/followers/<username>")
+@app.route("/followers/<username>/")
+@login_required
+def followers_(username):
+	user= User.query.filter_by(username=username).first()
+	user_followers  = user.followers.all()
+	
 
+
+
+
+	return render_template("fol.html",user_followers=user_followers)
+
+	
+@app.route("/users")
+@app.route("/users/")
+@login_required
+def users():
+	user_followers= User.query.all()
+
+	return render_template("fol.html",user_followers=user_followers)
+
+@app.route("/following/<username>")
+@app.route("/following/<username>/")
+@login_required
+def following_(username):
+	user= User.query.filter_by(username=username).first()
+	user_followers  = user.followed.all()
+	
+
+
+
+
+	return render_template("fol.html",user_followers=user_followers)
 
 @app.route('/follow/<username>')
 @app.route('/follow/<username>/')
@@ -641,18 +692,17 @@ def edit_profile(username):
 def follow(username):
 	user=User.query.filter_by(username=username).first()
 	if user is None:
-		return ''' user not found'''
-		return redirect(url_for("home"))
+		flash(user.username + " doesn't exist", 'warning')
+		return redirect(url_for('profile',username=username))
 	if user == current_user:
-		
-
-		return redirect(url_for('.profile', username=username))
+		flash("You can't follow yourself.",'danger')
+		return redirect(url_for('profile', username=username))
 
 	current_user.follow(user)
 	db.session.commit()
-	#flash('you have followed {}!'.format(username))
+	flash('you have followed {}!'.format(username),'success')
 	#return redirect(url_for('.avatar', username=username))
-	return redirect(url_for('.profile', username=username))
+	return redirect(url_for('profile', username=username))
 
 @app.route('/unfollow/<username>')
 @app.route('/unfollow/<username>/')
@@ -661,14 +711,14 @@ def follow(username):
 def unfollow(username):
 	user = User.query.filter_by(username=username).first()
 	if user is None:
-		return ''' user not found'''
-		
+		flash(user.username + " doesn't exist", 'warning')
+		return redirect(url_for('profile',username=username))
 	if user == current_user:
-		
+		flash('You cant unfollow yourself.','danger')
 		return redirect(url_for('.profile', username=username))
 	current_user.unfollow(user)
 	db.session.commit()
-	#flash('You have unfollowed {}.'.format(username))
+	flash('You have unfollowed {}.'.format(username),'success')
 	return redirect(url_for('.profile', username=username))
 
 @app.route('/uploads/<filename>')
@@ -681,6 +731,14 @@ def uploaded_file(filename):
 @app.route("/index/")
 def index():
 	return render_template("index1.html")
+
+@app.errorhandler(404)
+def not_found_error(error):
+	return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def not_found_error(error):
+	return render_template('500.html'),500
 
 if __name__ == '__main__':
 	app.run()
