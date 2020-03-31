@@ -1,0 +1,423 @@
+.navbar-nav{
+	margin-left: auto;
+}
+
+.nav-link{
+	padding: 0 18px;
+}
+
+.navbar-brand{
+/*	font-size: 3.5rem;*/
+	font-weight: bold;
+	
+}
+
+.con1{
+	background-image: url(/image/bence-boros-2WpkG7DzBRI-unsplash.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: auto;
+	height: 660px;
+	width:100%;
+	margin-top: 55px;
+}
+
+.aa{
+/*	border: white 2px solid;*/
+	text-align: center;
+	font-size: 80px;
+	color: white;
+	margin-top: 120px;
+/*	font-family: 'Oswald', sans-serif;*/
+/*	font-family: 'Lobster', cursive;*/
+/*	font-family: 'Acme', sans-serif;*/
+/*	font-family: 'Kaushan Script', cursive;*/
+}
+.wel{
+	font-family: 'Oswald', sans-serif;
+}
+
+.ab{
+/*	border: white 2px solid;*/
+	margin-top: 60px;
+	padding-right: 65px;
+}
+.ac{
+/*	border: white 2px solid;*/
+	line-height: 45px;
+	text-align: center;
+	color: white;
+	padding-right: 85px;
+}
+
+.services{
+	background-color:black;
+	background-image: url(/image/back.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding-bottom: 30px;
+}
+
+/*
+.vb p{
+	font-size:70px;
+	margin:40px;
+	color: black;
+	text-decoration: underline bold;
+	margin-left: auto;
+	margin-right: auto;
+	font-family:sans-serif;
+	margin-bottom: 0px;
+}
+*/
+
+.caro{
+	margin:0% 13%;
+	padding-top: 0%;
+}
+
+.car{
+	height: 600px;
+	width: 450px;
+}
+.ml11,.ml12{
+  font-weight: 700;
+  font-size: 3.5em;
+}
+
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml12 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml11 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color:black;
+  transform-origin: 0 50%;
+}
+.ml12 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color:black;
+  transform-origin: 0 50%;
+}
+
+
+.ml11 .line1 { 
+  top: 0; 
+  left: 0;
+}
+
+.ml11 .letter {
+  display: inline-block;
+  color:black;
+/*  font-family: 'Oswald', cursive;*/
+  font-family: 'Lobster', sans-serif;
+  line-height: 1em;
+}
+.ml12 .line1 { 
+  top: 0; 
+  left: 0;
+}
+
+.ml12 .letter {
+  display: inline-block;
+  color:black;
+/*  font-family: 'Oswald', cursive;*/
+  font-family: 'Lobster', sans-serif;
+  line-height: 1em;
+}
+
+.ser{
+	margin-left:500px;
+	padding-top: 22px;
+	margin-bottom: 15px;
+}
+.cc{
+	margin-top: 100px;
+	text-align: center;
+	border: black 2px dotted;
+    border-radius: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.v2{
+	margin-top: 15px;
+}
+
+.ds{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.rb img{
+	height: 270px;
+	width: 500px;
+	padding-left: 55px;
+}
+
+.rb1{
+	text-align: center;
+	}
+
+.rb1 h4{
+	text-decoration: underline;
+	padding-top: 10px;
+	margin-top: 10px;
+}
+
+.c1,.c2{
+	border:red 2px solid;
+}
+
+.c2{
+	margin-top:40px;
+	border:black 2px dotted;
+	border-radius: 20px;
+}
+
+.rb4{
+	padding-left: 55px;
+	padding-top: 30px;
+}
+
+
+.imga h4{
+	text-align: center;
+	text-decoration: underline;
+	padding-top: 10px;
+	margin-top: 10px;
+}
+
+.imga{
+	text-align: center;
+}
+
+.rb4 img{
+	padding-top: 20px;
+	border-spacing: 300px;
+}
+
+.c1{
+	
+	margin-top:30px;
+	border:black 2px dotted;
+	border-radius: 20px;
+}
+
+.ww{
+	padding-bottom: 40px;
+	padding-left: 10px;
+	padding-top: 55px;
+}
+
+.as{
+	margin-top: 40px;
+	border-radius: 20px;
+	border:black 2px dotted;
+    padding-left: 55px;
+}
+
+.ser2{
+	font-family: 'Lobster', sans-serif;
+	margin-left: 400px;
+	padding-top: 22px;
+}
+.COU{
+	background-image: url(/image/bacj.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 0px;
+	padding-top: 0px;
+	padding-bottom: 30px;
+}
+
+/*     TEAM    */
+
+.ml14 {
+  font-weight: 200;
+  font-size: 3.2em;
+}
+
+.ml14 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml14 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color:white;
+  transform-origin: 100% 100%;
+  bottom: 0;
+}
+
+.ml14 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.teamhead{
+	font-family: 'Lobster', sans-serif;
+	color: white;
+	margin-left: 450px;
+	margin-bottom: 45px;
+	padding-top: 22px;
+}
+
+
+.av{
+	margin-left: 187px;
+}
+
+
+.cv{
+	margin-left: 40px;
+	margin-right:40px;
+}
+
+.bv{
+	margin-left:40px;
+}
+.team{
+/*	background-color: crimson;*/
+	background-image: url(/image/red.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-bottom: 65px;
+}
+.bq{
+	color:white;
+	margin-top: 45px;
+	margin-bottom: 0px;
+}
+.con{
+	border-top:black 4px solid;
+	border-bottom:black 4px solid;
+	background-color:dimgrey;
+	color: black;
+	height: 110px;
+	
+}
+
+.vv{
+	text-decoration: underline;
+	margin: 0;
+	padding: 0;
+}
+
+.nbn{
+	padding-top: 10px;
+	padding-left: 150px;
+}
+/*
+section{
+	position: relative;
+	overflow: hidden;
+}
+section .wave{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background: url(/images/wave.png);
+	background-size: 1000px 100px;
+}
+section .wave.wave1{
+	animation: animate 30s linear infinite;
+	z-index: 1000;
+	opacity: 0.5;
+	animation-delay: 0s;
+	bottom:0; 
+}
+section .wave.wave2{
+	animation: animate2 15s linear infinite;
+	z-index: 999;
+	opacity: 0.3;
+	animation-delay: -5s;
+	bottom: 0px;
+}
+section .wave.wave3{
+	animation: animate3 30s linear infinite;
+	z-index: 998;
+	opacity: 0.2;
+	animation-delay: -2s;
+	bottom: 0px;
+}
+section .wave.wave4{
+	animation: animate2 5s linear infinite;
+	z-index: 997;
+	opacity: 0.4;
+	animation-delay: -2s;
+	bottom: 0px;
+}
+@keyframes animate{
+	
+	0%{
+		background-position: 0; 
+	}
+	100%{
+		background-position: 1000px;
+	}
+}
+@keyframes animate2{
+	
+	0%{
+		background-position: 0; 
+	}
+	100%{
+		background-position: 1000px;
+	}
+}
+@keyframes animate3{
+	
+	0%{
+		background-position: 0; 
+	}
+	100%{
+		background-position: 1000px;
+	}
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
