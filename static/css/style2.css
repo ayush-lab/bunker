@@ -13,7 +13,7 @@
 }
 
 .con1{
-	background-image: url(/image/bence-boros-2WpkG7DzBRI-unsplash.jpg);
+	background-image: url(/img/bence-boros-2WpkG7DzBRI-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: auto;
@@ -52,7 +52,7 @@
 
 .services{
 	background-color:black;
-	background-image: url(/image/back.jpg);
+	background-image: url(/img/back.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -244,7 +244,7 @@
 	padding-top: 22px;
 }
 .COU{
-	background-image: url(/image/bacj.jpg);
+	background-image: url(/img/bacj.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-top: 0px;
@@ -307,7 +307,7 @@
 }
 .team{
 /*	background-color: crimson;*/
-	background-image: url(/image/red.jpg);
+	background-image: url(/img/red.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding-bottom: 65px;
@@ -347,7 +347,7 @@ section .wave{
 	left: 0;
 	width: 100%;
 	height: 100px;
-	background: url(/images/wave.png);
+	background: url(/img/wave.png);
 	background-size: 1000px 100px;
 }
 section .wave.wave1{
