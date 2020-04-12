@@ -1,3 +1,1 @@
-# bunker
-
-To make an interactive  and responsive website to help buddies from different classes to meet each other according to their individual's priorities of subjects.  
+BUNKER is a website which help you bunk your classes with your friends by taking in account their priorities of subjects.
