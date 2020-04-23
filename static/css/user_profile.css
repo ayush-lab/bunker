@@ -1,0 +1,36 @@
+.dark{
+background-color: black;
+
+
+}
+
+.dark-text{
+	
+	color: white;
+	
+}
+
+.normal-text{
+	color:black;
+}
+
+.dark-image{
+	background-color: white;
+}
+.normal-image{
+
+}
+
+.normal{
+background-color: azure;
+box-shadow: 5px 5px azure;
+}
+
+.dark-container-fluid{
+	background-color: black;
+}
+.normal-container-fluid{
+
+ background: linear-gradient( azure 10%,lightblue 80%);
+}
+
