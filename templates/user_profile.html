@@ -7,6 +7,7 @@
         
     <div id="container-fluid-id" class="container-fluid normal-container-fluid" >
 
+
       <div class="dropdown"  >
   <button style="margin-top:0px" class="btn btn-Warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Themes
@@ -18,9 +19,11 @@
   </div>
 </div>
 
-        <div id="container2" class="container mt-0 normal" style="width: 1000px; height: 1200px;  ">
+        <div id="container2" class="container mt-0 normal" style="width: 100%; height: auto;  ">
   
         <div class="container-fluid " style="background-image:  url({{ url_for('static',filename='img/banner3.jpg') }});
+        width:100%;
+        object-fit:none;
         border-style: solid;
         border-image: grey;
         background-repeat: no-repeat;
@@ -34,15 +37,16 @@
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
-          height: 195px;
-          width: 195px;
-          max-width: 100%;
+          
+          
+          max-width:180px;
+          height: 180px;
+          
           border: 4px solid grey;
-          border-radius: 50%;
-          object-fit: cover;
+          
           position: relative;
           left: 35%;
-          top: 60%;
+          top: 65%;
 
           " ></div> 
 
@@ -50,30 +54,37 @@
        </div>
 
 
-             <div id="intro" class="normal-text"> <!-- name status follower collge text-->
+             <div id="intro" class="normal-text" style="position:relative;"> <!-- name status follower collge text-->
 
-                  <p style="white-space: nowrap; display:inline-block; font-style: bold; font-family: 'Francois One', sans-serif;  font-size:40px; " >{{u.username}}</p>
+                  <p style="white-space: nowrap; display:inline-block; font-family: 'Francois One', sans-serif;  padding-top: 20px;font-size:250%; " >{{u.username}}</p>
                   
                   {% if  u == current_user %}
 
                   {% elif not current_user.is_following(u) %}
-                  <a href="/follow/{{u.username}}/"><button type="button" class="btn btn-dark" style="  display:inline-block;margin-left: 4%;>Dark</button>">Follow</button></a>
+                  <a href="/follow/{{u.username}}/"><button type="button" class="btn btn-dark" style="  display:inline-block; position: absolute; top:30%; left:100px; >Dark</button>">Follow</button></a>
                  
                   {% elif current_user.is_following(u) %}
-                  <a href ="/unfollow/{{u.username}}/"><button type="button" class="btn btn-dark" style="  display:inline-block;margin-left:4%;>Dark</button>">Unfollow</button></a>
+                  <a href ="/unfollow/{{u.username}}/"><button type="button" class="btn btn-dark" style="  display:inline-block;   absolute; top:25%; left:100px;;>Dark</button>">Unfollow</button></a>
              
                   {% endif %}
 
-                  <a href="/following/{{u.username}}/"><button type="button" class="btn btn-dark" style=" font-family: 'Comic Neue', cursive;font-size: 14px;
-                  margin-left:500px; position:relative; >Dark</button>">Following</button></a> <p style="font-size: 19px; display:inline-block;">{{counting_following}}</p>
+                  <a href="/following/{{u.username}}/"><button type="button" class="btn btn-dark" style=" font-family: 'Comic Neue', cursive;font-size: 14px; padding:1px;
+                   position:absolute; top:35%; right:70px;>Dark</button>">Following</button></a>
 
-                  <a href="/followers/{{u.username}}/"><button type="button" class="btn btn-dark" style=" position:relative; font-family: 'Comic Neue', cursive; font-size: 14px;>Dark</button>">Followers</button></a> <p style="font-size: 19px; display:inline-block;">{{counting_followers}}</p>
+                   <p style="font-size: 19px; display:inline-block; position:absolute; top:10%; right:90;">{{counting_following}}</p>
+
+
+
+                  <a href="/followers/{{u.username}}/"><button type="button" class="btn btn-dark" style=" position:absolute; padding:1px; top:35%; right:5px;
+                   font-family: 'Comic Neue', cursive; font-size: 14px;>Dark</button>">Followers</button></a> 
+
+                   <p  style=" position:absolute; top:10%; right:24px; font-size: 19px; display:inline-block;">{{counting_followers}}</p>
                   
 
                 <div > 
 
                   <br>
-                  <i id="college" class="normal-text" style ="font-family: 'Comic Neue', cursive; font-size: 20px;"><img id="college_img" class="normal-image" src="https://img.icons8.com/material-outlined/24/000000/student-center.png"/>: {{u.college}}</i>       
+                  <i id="college" class="normal-text" style ="font-family: 'Comic Neue', cursive; font-size: 120%; position: absolute; top:90%; left:0px; "><img id="college_img" class="normal-image" src="https://img.icons8.com/material-outlined/24/000000/student-center.png"/>: {{u.college}}</i>       
                   
                 </div>
 
@@ -81,15 +92,20 @@
                 
 
                   
-            </div> <!--end of tag of collgee and follow-->
-            <div id="status" class="normal-text">
-            <img id="status_img" class="normal-image" style="display:inline-block;margin-left: 5px;"src="https://img.icons8.com/small/16/000000/connection-status-on.png"/>
-              <i class="row border " style="margin-top: 20px; margin-left: 17px; display: inline-block; font-family: 'Comic Neue', cursive; width:330px; height: 40px; font-size:20px;   "> <p1> {{u.about_me}}</p1></i></div>
+            </div>
 
-<div>
+             <!--end of tag of collgee and follow-->
+            <div id="status" class="normal-text" style="position:relative;">
+            <img id="status_img" class="normal-image" style="display:inline-block;position:absolute; top:50px; left:1px;"src="https://img.icons8.com/small/16/000000/connection-status-on.png"/>
+
+              <i class="row border " style="position:absolute; top:40px; left:50px; display: inline-block; font-family: 'Comic Neue', cursive; width:330px; height: 40px; font-size:20px;   "> <p1> {{u.about_me}}</p1></i></div>
+
+<div style="position:relative;">
   <br>
+
+
               {% if u==current_user %}
-            <a href="/edit_profile/{{current_user.username}}"> <i style=" margin-top: 27px; font-family: 'Comic Neue', cursive;margin-left: 7px; ;font-size:17px;" ><img id="edit_img" class="normal-image"  src="https://img.icons8.com/metro/26/000000/edit.png"/> &nbsp EDIT</a> </i> 
+            <a href="/edit_profile/{{current_user.username}}"> <i style=" position:absolute; top:110px; left:7px; font-family: 'Comic Neue', cursive;font-size:17px;" ><img id="edit_img" class="normal-image"  src="https://img.icons8.com/metro/26/000000/edit.png"/> &nbsp EDIT</a> </i> 
   
                {% endif %}
 
@@ -103,20 +119,15 @@
 
 </div>  
           
-           <div class="row" style="margin-top: 2px; margin-left: 50px;">
+           <div class="row" style="margin-top: 600px; margin-left:0px;">
               <div class="col-lg-6">
-            
-             
-                
-                <div>
-                  
-                  
-                  </div>
+        
+              
               </div>
             
              </div>
        
-            <div id="timetabletitle" class="normal-text row text-center" style="margin-top: 20px; margin-left: 100px;">
+            <div id="timetabletitle" class="normal-text row text-center" style="position:absolute; top:700px; left: 0px;">
 
               <h3 style="margin-left: 300px;  ;">MY TIME-TABLE</h3>
               <div class="col-lg-10">
