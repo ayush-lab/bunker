@@ -1,0 +1,40 @@
+
+
+.button
+{
+   
+    text-decoration: none;
+    
+    margin-left: 30px;
+    padding: 13px 120px 13px 120px;
+    border-radius: 30px;
+    border: 2px solid #32be8f;
+    font-size: 25px;
+    font-weight: 600;
+   background-image:  linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+   color: white;
+
+
+}
+.signup
+{
+    margin-left: 90px;  
+    animation-name: slide;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    
+}
+@keyframes slide
+{
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(0%);}
+}
+
+@media screen and (max-width: 1250px )
+{
+    .img{ display: none }
+    .button{   padding: 10px 90px ;
+        border-radius: 20px;
+    font-size: 15px; }
+    .signup{ margin-left: 0px;}
+}
