@@ -17,7 +17,7 @@ scroll-behavior: smooth;
 {
 	background-color: black;
 	
-	
+	background-image: url(../image/logo\ \(2\).jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -66,7 +66,10 @@ scroll-behavior: smooth;
 	left: 30px;
 }
 
-
+#boy
+{
+	height: 350px;
+}
  
   /* for rounder cards to look op*/
 .maa 
@@ -115,6 +118,16 @@ scroll-behavior: smooth;
 	background-position: center;
 	background-size: cover;
 }
+.land
+{
+	background-color: black;
+	
+		background-image: url(../image/logo\ \(2\)1.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		height: 600px;
+}
 
 .vb h3{
 	font-size:50px;
@@ -126,7 +139,26 @@ scroll-behavior: smooth;
 	font-family:sans-serif;
 	margin-bottom: 8px;
 }
+.bunkar
+{
+	margin-top: 10px;  text-shadow: 4px 4px black; float: left; font-size: 4.3em; color: white; margin-left: 60px;
+}
+.aa2
+{
+	font-weight: 500; width: 100%;
+}
+#ast1
+{
+	height: 400px;
+}
+@media screen and  (max-width: 320px) {
+	 .aa2{ font-size: 14px;margin-left: -15px; margin-top: -20px;}
+	.land{ height: 256px; }
+	
+	#ast1{ height: 200px;}
+	.bunkar{ font-size: 40px; border-bottom: 2px solid white;}	
 
+  }
 
 
 .car{
@@ -135,24 +167,22 @@ scroll-behavior: smooth;
 	height: 400px;
 	width: 450px;
 }
-
 .box
 {     height: 100px;
 	width: 100px;
 	 box-shadow:  5px 5px 5px 5px gray;
 	
 }
-
-
-.aaaa
-{
-	background-image: url(../image/scg-canvas-background-animation-11.jpg);
-	background-repeat: repeat;
-	background-position: center;
-	background-size: cover;
-	height: 1000px;
-		
+.hh{
+	margin: auto;
+    opacity:1;
 }
+.aa
+{
+	background-image: url(../image/graphicD.svg);
+}
+
+
 .zz
 {
 	background-image: url(image/scg-canvas-background-animation-6.jpg);
@@ -172,31 +202,18 @@ scroll-behavior: smooth;
 	background-position: center;
 	background-size: cover;
 }
-
-.side
+.ad
 {
-	background-image: url(image/banner.jpg);
+	
+	background-image: url(../image/avatar-2155431__340.webp);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	height: 200px;
 
-}
-.dp
-{
-	background-image: url(image/banner.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	height: 125px;
-	width: 125px;
-	border: 4px solid white;
-	border-radius: 50%;
-	position: relative;
-	top: 140px;
 }
 .side1
 {
+	
 	height: 200px;
 	width: 200px;
 	background-color: gray;
@@ -218,42 +235,63 @@ scroll-behavior: smooth;
 	 border-radius: 8px;
 	 background-color: black;
 }
-
+.boy1
+{
+	height: 350px;
+}
 .vv:hover
 {
   width: 150px;
 	transition: 0.5s;
 }
 
-@media (min-width: 576px) { 
 
-
- }
-
-
-@media (max-width: 768px) { 
-	#care { display: none;
-	width: 100px;
-	
-	}
-	#wedo { margin-top: 600px;}
-    
- }
  @media (max-width: 990px)
  {
 	#si { margin-top: 50px;}
+
+	#mast1{ height: 200px; width: 300px;}	
+ }
+
+ 
+@media (max-width: 768px) { 
+	.subbtn{ margin-left: 20%; }
+	#care{ margin-top: 200px; height: 200px;}
+	.boy1{ opacity: 0;}
+
+	#wedo { margin-top: 180px;}
+    
+ }
+ 
+@media (max-width: 576px) { 
+
+	.subbtn{ margin-left: 0%; }
+	#masti1{height: 200px;}
+ }
+ @media screen and (max-width: 360px) { 
+#boy{ height: 200px; }
+	.subbtn{ margin-left: 0%; }
+	#masti1{height: 200px;}
+
  }
 
  .form1
  {
-	background-color:blueviolet;
+	background-image: url(/image/wallpaper.png);
+	background-position: center;
+	background-size: cover;
+ }
+
+ .card
+ {
+	 opacity: 1;
  }
 
 
  .wwe{
-	font-family: 'Pacifico', cursive;
-	color: beige;
-	opacity: 0.8;
+	
+	
+	opacity: 1;
 	font-size: 55px;
 }
 #b
@@ -265,17 +303,30 @@ scroll-behavior: smooth;
 .subbtn
 {
 	color: white;
-	float: right;
+	
+	margin-left: 40%;
 	border:  1px solid white;
-	padding: 6px 8px ;
+	padding: 10px 120px ;
+	border-radius: 30px;
 	text-decoration: none;
+	font-weight: 700;
+	
 	
 }
 .subbtn:hover
 {
-
+	
+	color: black;
 	text-decoration: none;
-	background-color: greenyellow;
+	background-color: white;
 	transition: 0.4s ease-in-out;
 
+}
+
+
+
+
+.aa3
+{
+	opacity: 1;
 }
