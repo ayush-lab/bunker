@@ -4,138 +4,135 @@
        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/user_profile.css') }}">
 
 
-        
-    <div id="container-fluid-id" class="container-fluid normal-container-fluid" >
+
+    <div id="container-fluid-id" class="container-fluid normal-container-fluid" style="
+    width:100%">
 
 
       <div class="dropdown"  >
-  <button style="margin-top:0px" class="btn btn-Warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button style="margin-top:4px; margin-bottom: 4px; padding:1px;"  class="btn btn-Warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Themes
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a id="dark_1" class="dropdown-item" >Dark</a>
     <a id="azure_1"class="dropdown-item" >Azure</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+    <a class="dropdown-item" href="#"></a>
   </div>
 </div>
 
         <div id="container2" class="container mt-0 normal" style="width: 100%; height: auto;  ">
-  
-        <div class="container-fluid " style="background-image:  url({{ url_for('static',filename='img/banner3.jpg') }});
+
+        <div class="container-fluid imag" style="background-image:  url({{ url_for('static',filename='img/banner3.jpg') }});
         width:100%;
-        object-fit:none;
+
         border-style: solid;
         border-image: grey;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position:-10px;
         background-size: cover;
-        height: 300px;">
-  
-            
-         
-          <div  style="background-image:  url({{img_scr}});
+
+        ">
+
+
+
+          <div class="profile_image" style="background-image:  url({{img_scr}});
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
-          
-          
-          max-width:180px;
-          height: 180px;
-          
-          border: 4px solid grey;
-          
+
+
           position: relative;
           left: 35%;
           top: 65%;
 
-          " ></div> 
+          " ></div>
 
-            
+
        </div>
 
 
-             <div id="intro" class="normal-text" style="position:relative;"> <!-- name status follower collge text-->
+             <div id="intro" class="normal-text" style="position:relative; width:100%;"> <!-- name status follower collge text-->
 
-                  <p style="white-space: nowrap; display:inline-block; font-family: 'Francois One', sans-serif;  padding-top: 20px;font-size:250%; " >{{u.username}}</p>
-                  
+                  <p class="name" style="white-space: nowrap; display:inline-block; font-family: 'Francois One', sans-serif;  padding-top: 20px;" >{{u.username}}</p>
+
                   {% if  u == current_user %}
 
                   {% elif not current_user.is_following(u) %}
-                  <a href="/follow/{{u.username}}/"><button type="button" class="btn btn-dark" style="  display:inline-block; position: absolute; top:30%; left:100px; >Dark</button>">Follow</button></a>
-                 
+
+                  <a href="/follow/{{u.username}}/"><button type="button" class="btn btn-dark follow" style="  >Dark</button>">Follow</button></a>
+
                   {% elif current_user.is_following(u) %}
-                  <a href ="/unfollow/{{u.username}}/"><button type="button" class="btn btn-dark" style="  display:inline-block;   absolute; top:25%; left:100px;;>Dark</button>">Unfollow</button></a>
-             
+                  <a href ="/unfollow/{{u.username}}/"><button type="button" class="btn btn-dark follow" style=">Dark</button>">Unfollow</button></a>
+
                   {% endif %}
 
-                  <a href="/following/{{u.username}}/"><button type="button" class="btn btn-dark" style=" font-family: 'Comic Neue', cursive;font-size: 14px; padding:1px;
-                   position:absolute; top:35%; right:70px;>Dark</button>">Following</button></a>
+                  <a href="/following/{{u.username}}/"><button type="button" class="btn btn-dark following" style=" >Dark</button>">Following</button></a>
 
-                   <p style="font-size: 19px; display:inline-block; position:absolute; top:10%; right:90;">{{counting_following}}</p>
-
+                   <p class="following_count">{{counting_following}}</p>
 
 
-                  <a href="/followers/{{u.username}}/"><button type="button" class="btn btn-dark" style=" position:absolute; padding:1px; top:35%; right:5px;
-                   font-family: 'Comic Neue', cursive; font-size: 14px;>Dark</button>">Followers</button></a> 
 
-                   <p  style=" position:absolute; top:10%; right:24px; font-size: 19px; display:inline-block;">{{counting_followers}}</p>
-                  
+                  <a href="/followers/{{u.username}}/"><button type="button" class="btn btn-dark followers" style="
+                   >Dark</button>">Followers</button></a>
 
-                <div > 
+                   <p class="followers_count" style=" ">{{counting_followers}}</p>
+
+
+                <div >
 
                   <br>
-                  <i id="college" class="normal-text" style ="font-family: 'Comic Neue', cursive; font-size: 120%; position: absolute; top:90%; left:0px; "><img id="college_img" class="normal-image" src="https://img.icons8.com/material-outlined/24/000000/student-center.png"/>: {{u.college}}</i>       
-                  
+                  <i id="college" class="normal-text college_pos" style =" "><img id="college_img" class="normal-image" src="https://img.icons8.com/material-outlined/24/000000/student-center.png"/>: {{u.college}}</i>
+
                 </div>
 
 
-                
 
-                  
+
+
             </div>
 
              <!--end of tag of collgee and follow-->
             <div id="status" class="normal-text" style="position:relative;">
-            <img id="status_img" class="normal-image" style="display:inline-block;position:absolute; top:50px; left:1px;"src="https://img.icons8.com/small/16/000000/connection-status-on.png"/>
+            <img id="status_img" class="normal-image status_pos"src="https://img.icons8.com/small/16/000000/connection-status-on.png"/>
 
-              <i class="row border " style="position:absolute; top:40px; left:50px; display: inline-block; font-family: 'Comic Neue', cursive; width:330px; height: 40px; font-size:20px;   "> <p1> {{u.about_me}}</p1></i></div>
+              <i class="row border status_style" style=""> <p1> {{u.about_me}}</p1></i></div>
 
 <div style="position:relative;">
   <br>
 
 
               {% if u==current_user %}
-            <a href="/edit_profile/{{current_user.username}}"> <i style=" position:absolute; top:110px; left:7px; font-family: 'Comic Neue', cursive;font-size:17px;" ><img id="edit_img" class="normal-image"  src="https://img.icons8.com/metro/26/000000/edit.png"/> &nbsp EDIT</a> </i> 
-  
+            <a href="/edit_profile/{{current_user.username}}"> <i class="edit_pos" ><img id="edit_img" class="normal-image"  src="https://img.icons8.com/metro/26/000000/edit.png"/> &nbsp EDIT</a> </i>
+
                {% endif %}
 
 {% if u!=current_user %}
 
-    <a > <i style=" margin-top: 27px; font-family: 'Comic Neue', cursive;margin-left: 7px; ;font-size:17px;" ><img id="edit_img" class="normal-image"  > </a> </i> 
+    <a > <i style=" margin-top: 27px; font-family: 'Comic Neue', cursive;margin-left: 7px; ;font-size:17px;" ><img id="edit_img" class="normal-image"  > </a> </i>
 
 {% endif %}
 
-         
 
-</div>  
-          
-           <div class="row" style="margin-top: 600px; margin-left:0px;">
-              <div class="col-lg-6">
-        
-              
+
+</div>
+
+           <div class="row " style="margin-top: 600px; margin-left:0px; ">
+              <div class="col-lg-6" >
+
+
               </div>
-            
+
              </div>
-       
-            <div id="timetabletitle" class="normal-text row text-center" style="position:absolute; top:700px; left: 0px;">
+
+            <div id="timetabletitle" class="display normal-text row text-center "  style="position:absolute; top:700px; left: 0px; " >
 
               <h3 style="margin-left: 300px;  ;">MY TIME-TABLE</h3>
               <div class="col-lg-10">
                 <div class="row">
                   <div class="col-lg-8">
-                    
+
                     <div class="container hh">
-    <table id="table" style="border-style:solid; border-color:black;" class="table table-hover aa normal-text">
+    <table id="table" style="margin-left: 300px;border-style:solid; border-color:black;" class="table table-hover aa normal-text">
           <thead class="thead-dark">
         <tr>
         <th scope="col"></th>
@@ -176,7 +173,7 @@
            <td ><a href="/Tuesday/7">{{user[14].subject}}</a></td>
            <td ><a href="/Tuesday/8">{{user[15].subject}}</a></td>
            <td ><a href="/Monday/8">{{user[7].subject}}</a></td>
-           
+
         </tr>
         <tr>
         <th scope="row">Wednesday</th>
@@ -189,7 +186,7 @@
         <td ><a href="/Wednesday/7">{{user[22].subject}}</a></td>
       <td ><a href="/Wednesday/8">{{user[23].subject}}</a></td>
       <td ><a href="/Monday/8">{{user[7].subject}}</a></td>
-          
+
         </tr>
         <tr>
         <th scope="row">Thursday</th>
@@ -214,35 +211,35 @@
         <td ><a href="/Friday/7">{{user[37].subject}}</a></td>
           <td ><a href="/Friday/8">{{user[38].subject}}</a></td>
           <td ><a href="/Monday/8">{{user[7].subject}}</a></td>
-        
+
         </tr>
-        
-    
-                          
+
+
+
                         </tbody>
                         </table>
                       </div>
-                  
-                
+
+
                   </div>
-                
+
                 </div>
-                
+
 
               </div>
-              
+
             </div>
-          
-          
-          
-       
-  
-  
-  
-        
+
+
+
+
+
+
+
+
 
     </div>
-    
+
 
 </body>
 
@@ -252,10 +249,10 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
-  
+
 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  
+
 
 {% endblock %}
