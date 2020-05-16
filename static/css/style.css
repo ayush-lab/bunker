@@ -151,15 +151,15 @@ scroll-behavior: smooth;
 {
 	height: 400px;
 }
-@media screen and  (max-width: 320px) {
+@media screen and  (max-width: 580px) {
 	 .aa2{ font-size: 14px;margin-left: -15px; margin-top: -20px;}
-	.land{ height: 256px; }
+	.land{ height: 206px; }
 	
 	#ast1{ height: 200px;}
 	.bunkar{ font-size: 40px; border-bottom: 2px solid white;}	
 
+	#boy{ height: 180px; }
   }
-
 
 .car{
 	border-radius: 10px;
@@ -268,12 +268,7 @@ scroll-behavior: smooth;
 	.subbtn{ margin-left: 0%; }
 	#masti1{height: 200px;}
  }
- @media screen and (max-width: 360px) { 
-#boy{ height: 200px; }
-	.subbtn{ margin-left: 0%; }
-	#masti1{height: 200px;}
-
- }
+ 
 
  .form1
  {
