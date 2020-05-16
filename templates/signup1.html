@@ -3,7 +3,82 @@
 {%block content%}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>{% extends "base.html" %}
+
+{%block content%}
+
+
+    <link rel="stylesheet" type= "text/css"  href="{{ url_for('static', filename='css/ww.css') }}">
+    
+    <title>Document</title>
+</head>
+
+<body >
+    <div class="container-fluid " style="background-color: white; text-align: center;    height: 900px;"> 
+        <img src="{{url_for('static',filename='img/wave.png')}}"height="800px" width="500px" style="position: absolute; left: 0px; top: 70px;     float: right;" class="img" alt="">
+    
+                <br>
+                <br>
+                   <form action="/signup/" method="post">
+                <div class="signup" style=" margin-top: 30px; text-align: center;  ">
+                    <img src="{{url_for('static',filename='img/boy.svg')}}" height="100px"  width="100px" alt="">
+                    <h1 class="ml-1" style=" font-size: 50px; font-weight: 700;" >SIGNUP</h1>
+                   
+                    
+                    <br>
+                    <label  for="username"  style="font-weight: 700; font-size: 17px;"   >USERNAME:</label>
+                    <br>
+                    <br>
+
+                    <input id="username" name="username"  "   class="text" type="text" value=""  style=" border: none; border-bottom: 3px solid black; transition: 1s; ">
+
+                    <br>
+                    <br>
+
+                    <label for="username" style=" font-weight: 700; font-size: 17px;" >PASSWORD:</label>
+                    <br>
+                    <br>
+
+                    <input type="password" id="password"  name ="password" style=" border: none; border-bottom: 3px solid black; ">
+                    <br>
+                    <br>
+
+
+                    <label for="username" class="ml-2" style="margin-left: -10px;   font-size: 17px; font-weight: 700;" >CONFIRM PASSWORD:</label>
+                    <br>
+                     <br>
+                
+
+                    <input type="password" id="cnfpassword" name="confirm_password"  style=" border: none; border-bottom: 3px solid black;  ">
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <button type="submit" style=" margin-left: -1px; background-color:  linear-gradient(to right, #32be8f, #38d39f, #32be8f);" class="button">BUNK UP</button>
+                   </form>
+
+
+                </div>
+
+
+
+    </div>
+  <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/java.js') }}"></script> -->
+    
+
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+   crossorigin="anonymous">
+   <script src="js/bootstrap.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>    
+
+</body>
+
+</html>
+{% endblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
