@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  /* background-image: url(./img/back1.jpg); */
+  background-color: #77aa77;
+  background-image: url(../img/sign_in_wave);
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  /* background-position: cover;
+  background-repeat: no-repeat; */
+}
+.signin{
+  background-color: white;
+  margin: auto;
+  color: black;
+  margin: 11% 15%;
+}
+.gg{
+  border: black 2px solid;
+  border-radius: 20px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 15px 15px 10px 0px rgba(0,0,0,0.75);
+}
+.signin h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  padding-bottom: 0%;
+}
+.forgot{
+  color: rgba(66, 65, 65, 0.63);font-size: 13px;
+  cursor: pointer;
+}
+.text{
+  text-align: center;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  background-color: white;
+  border-radius:20px;
+}
+.input{
+  margin: 10px;
+  width: 60%;
+  padding-left: 3%;
+  border-radius: 5px;
+  height: 28px;
+}
+.icons{
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.icons a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+  width: 40px;
+  color: gray;
+}
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+  width: 80%;
+  height: 70%;
+}
+button {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+  font-weight: bold;
+  width: 27%;
+  height: 27px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+button:active {
+	transform: scale(0.95);
+}
+.wimg{
+  background: linear-gradient(#2b5876,#4e4376);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 18px 18px 0px;
+}
+.wimg>img{
+  height: 250px;
+}
+@media only screen and (max-width: 1000px) {
+  .wimg>img{
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .wimg>img{
+    /* background: transparent; */
+    height: 175px;
+  }
+  .wimg{
+    border-radius: 20px;
+    padding: 30px 0px;
+  }
+  .text>h2{
+    font-size: 30px;
+  }
+}
