@@ -668,11 +668,6 @@ def edit_profile(username):
 def followers_(username):
 	user= User.query.filter_by(username=username).first()
 	user_followers  = user.followers.all()
-
-
-
-
-
 	return render_template("fol.html",user_followers=user_followers)
 
 
@@ -690,11 +685,6 @@ def users():
 def following_(username):
 	user= User.query.filter_by(username=username).first()
 	user_followers  = user.followed.all()
-
-
-
-
-
 	return render_template("fol.html",user_followers=user_followers)
 
 @app.route('/follow/<username>')
@@ -838,15 +828,9 @@ class Timetable(UserMixin,db.Model):
 	OP_id =db.Column(db.Integer,db.ForeignKey("user.id"))
 
 
-
-
-
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
-
 
 
 @app.route("/logout")
